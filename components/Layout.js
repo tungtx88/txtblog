@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         _isMounted = true
         if (_isMounted) {
             setInProp(true)
-            require(['jRespond'], function (jRes) {
+            require(['jrespond'], function (jRes) {
                 var mediaQueries = jRes([
                     {
                         label: 'smallest',
