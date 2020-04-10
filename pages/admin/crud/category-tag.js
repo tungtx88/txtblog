@@ -26,7 +26,7 @@ const CategoryTag = () => {
                             <div className="row">
                                 <div className="col-md-12 pt-2 pb-4">
                                     {/* <h2>Manager Categories and Tags</h2> */}
-                                    <Link href="/admin/crud/blogs">
+                                    <Link href="/admin">
                                         <a><i className="icon-arrow-left"></i> <span className="ml-1">Back to dashboard</span></a>
                                     </Link>
                                 </div>
