@@ -129,7 +129,7 @@ const Blogs = ({ blogs, totalBlogs, router, blogLimit, blogSkip, blogSize }) => 
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     let skip = 0
     let limit = 5
     let totalBlogs = 0
