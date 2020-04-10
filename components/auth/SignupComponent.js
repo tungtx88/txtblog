@@ -68,7 +68,7 @@ const SignupComponent = () => {
                 </div>
 
                 <div>
-                    <button className="btn btn-primary">Submit</button>
+                    <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
                 </div>
             </form>
         )
