@@ -105,7 +105,7 @@ const Category = () => {
                     <input type="text" className="form-control" onChange={handleChange} value={name} required/>
                 </div>
                 <div>
-                    <button type="submit" className="btn btn-primary">Create</button>
+                    <button type="submit" className="btn btn-primary" onClick={clickSubmit}>Create</button>
                 </div>
             </form>
             </React.Fragment>
