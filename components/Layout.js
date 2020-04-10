@@ -1,5 +1,6 @@
 import Header from './Header'
 import Footer from './Footer'
+import MainWrap from './MainWrap'
 import { useEffect, useState } from 'react'
 import useBodyClass from '../helpers/useBodyClassName'
 import Fade from '@material-ui/core/Fade';
@@ -71,7 +72,9 @@ const Layout = ({ children }) => {
             <div id="wrapper" className="clearfix">
                 <Header />
                 <Fade in={inProp} timeout={1500}>
-                    {children}
+                    <MainWrap>
+                        {children}
+                    </MainWrap>
                 </Fade>
                 <Footer />
             </div>
