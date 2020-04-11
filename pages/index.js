@@ -41,7 +41,7 @@ const Index = ({ blogs }) => {
                         <div className="content-wrap">
                             <div className="container clearfix">
                                 <div className="heading-block center">
-                                    <h1>Recent Articles</h1>
+                                    <h1>Feature Articles</h1>
                                     <span>We almost blog regularly about this &amp; that.</span>
                                 </div>
                                 <div id="posts">
