@@ -11,10 +11,6 @@ const Blog = () => {
             name: 'dashboard'
         },
         {
-            href: '/admin/crud/blogs',
-            name: 'blogs'
-        },
-        {
             href: '',
             name: 'Update blog'
         }
@@ -30,8 +26,8 @@ const Blog = () => {
                         </div>
                         <div className="col-md-12">
                             <div className="mb-5">
-                                <Link href="/admin/crud/blogs">
-                                    <a><i className="icon-arrow-left"></i> <span className="ml-1">Back to blog list</span></a>
+                                <Link href="/admin">
+                                    <a><i className="icon-arrow-left"></i> <span className="ml-1">Back to dashboard</span></a>
                                 </Link>
                             </div>
 

@@ -12,7 +12,7 @@ import {
 const ThemeState = props => {
     const initialState = {
         body: {
-            className: ['stretched']
+            className: []
         },
         search: {
             show: false

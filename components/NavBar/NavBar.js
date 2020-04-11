@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Router from 'next/router'
 import {withRouter} from 'next/router'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, useRef } from 'react'
 import { isAuth, signout } from '../../actions/auth'
 import { APP_NAME } from '../../config'
 import "../../helpers/superfish"
@@ -16,7 +16,7 @@ const NavBar = ({router}) => {
     const [loggedIn, setLoggedIn] = useState({})
     const [searchVisible, setSearchVisible] = useState(search.show)
     const [searchText, setSearchText] = useState("")
-    const [currentPage, setCurrentPage] = ("/")
+    let wrapperRef = useRef(null)
 
     useEffect(() => {
         if (isAuth()) {
@@ -25,7 +25,7 @@ const NavBar = ({router}) => {
             setLoggedIn({})
         }
         setSearchVisible(search.show)
-    
+        document.addEventListener('mousedown', handleClickOutside);
         window.jQuery('#primary-menu').superfish({
             pathClass: 'current',
         })
@@ -40,8 +40,19 @@ const NavBar = ({router}) => {
         });
         return function cleanup() {
             window.jQuery('#primary-menu').superfish('destroy')
+            document.removeEventListener('mousedown', handleClickOutside);
         }
     }, [search.show])
+
+    const  handleClickOutside = (event) => {
+        if (wrapperRef && !wrapperRef.current.contains(event.target)) {
+            if (body.className.indexOf('top-search-open') !== -1) {
+                removeBodyClassName('top-search-open')
+                showSearchForm(false)
+            }
+          //this.setState({ showOptions: false });
+        }
+      }
 
     const signOutHandler = () => {
         setLoggedIn({})
@@ -66,10 +77,10 @@ const NavBar = ({router}) => {
 
             )
         } else {
-            let userPath = '/user'
-            if (loggedIn.role === 1) {
-                userPath = '/admin'
-            }
+            let userPath = '/admin'
+            // if (loggedIn.role === 1) {
+            //     userPath = '/admin'
+            // }
             return (
                 <React.Fragment>
                     <li className={router.pathname === '/admin' ? 'current' : ''}>
@@ -109,7 +120,8 @@ const NavBar = ({router}) => {
     }
 
     return (
-        <div>
+        <div ref={wrapperRef}>
+            
             <nav id="primary-menu">
                 {useBodyClassName(body.className)}
                 <ul>

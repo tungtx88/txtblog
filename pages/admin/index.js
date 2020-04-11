@@ -1,39 +1,38 @@
 import Layout from '../../components/Layout'
-import Link from 'next/link'
 import Admin from '../../components/auth/Admin'
+import BlogRead from '../../components/crud/BlogRead'
+import Link from 'next/link'
+import PageTitle from '../../components/PageTitle/PageTitle'
 
-const AdminIndex = () => {
+const CategoryTag = () => {
+    const breadCrumbLinks = [
+        {
+            href: '/admin',
+            name: 'dashboard'
+        }
+    ]
     return (
         <Layout>
             <Admin>
+                <PageTitle heading="Dashboard" subHeading="Managing Blogs Page" bcLinks={breadCrumbLinks} />
                 <section id="content">
                     <div className="content-wrap">
-                        <div className="container clearfix">
+                        <div className="container clear-fix">
                             <div className="row">
                                 <div className="col-md-12">
-                                    <h2>Admin Dashboard</h2>
-                                </div>
-                                <div className="col-md-4">
-                                    <ul className="list-group">
-                                        <li className="list-group-item">
-                                            <Link href="/admin/crud/category-tag">
-                                                <a>Create Category</a>
-                                            </Link>
-                                        </li>
-                                        <li className="list-group-item">
+                                    <ul className="nav">
+                                        <li className="nav-item">
                                             <Link href="/admin/crud/blog">
-                                                <a>Create Blog</a>
+                                                <a className="nav-link"><i className="icon-plus"></i> <span className="ml-1">Add new blog</span></a>
                                             </Link>
                                         </li>
-                                        <li className="list-group-item">
-                                            <Link href="/admin/crud/blogs">
-                                                <a>Managing Blogs</a>
+                                        <li className="nav-item">
+                                            <Link href="/admin/crud/category-tag">
+                                                <a className="nav-link"><i className="icon-plus"></i> <span className="ml-1">Add categories & tags</span></a>
                                             </Link>
                                         </li>
                                     </ul>
-                                </div>
-                                <div className="col-md-8">
-                                    
+                                    <BlogRead />
                                 </div>
                             </div>
                         </div>
@@ -44,4 +43,4 @@ const AdminIndex = () => {
     )
 }
 
-export default AdminIndex
+export default CategoryTag

@@ -11,10 +11,6 @@ const CategoryTag = () => {
             name: 'dashboard'
         },
         {
-            href: '/admin/crud/blogs',
-            name: 'blogs'
-        },
-        {
             href: '',
             name: 'Create new blog'
         }
@@ -32,8 +28,8 @@ const CategoryTag = () => {
                                 </div>
                                 <div className="col-md-12">
                                     <div className="mb-5">
-                                        <Link href="/admin/crud/blogs">
-                                            <a><i className="icon-arrow-left"></i> <span className="ml-1">Back to blog list</span></a>
+                                        <Link href="/admin">
+                                            <a><i className="icon-arrow-left"></i> <span className="ml-1">Back to dashboard</span></a>
                                         </Link>
                                     </div>
                                     <BlogCreate />

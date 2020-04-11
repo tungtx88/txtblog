@@ -19,9 +19,8 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="/static/css/include/magnific-popup.css" type="text/css" />
           <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" type="text/css" />
           <link rel="stylesheet" href="/static/css/include/responsive.css" type="text/css" />
-          <link rel="stylesheet" href="//cdn.quilljs.com/1.2.6/quill.snow.css" type="text/css" />
-
           <link rel="stylesheet" href="/static/css/styles.css" />
+          
         </Head>
         <body className="stretched">
           <Main />
